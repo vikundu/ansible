@@ -1,0 +1,9 @@
+---
+- name: write a file
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: write a file test.txt to temp directory
+      ansible.builtin.copy:
+        dest: /tmp/test.txt
+        content: This is a test file. More text

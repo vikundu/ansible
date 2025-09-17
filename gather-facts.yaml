@@ -1,0 +1,11 @@
+---
+- name: Gather facts and display it
+  hosts: localhost
+  tasks:
+    - name: Display ansible_facts
+      ansible.builtin.debug:
+        var: ansible_facts
+
+    - name: Display specific kernel
+      ansible.builtin.debug:
+        msg: "ansible kernel: {{ ansible_facts.kernel }} distro: {{ ansible_facts.distribution }} version: {{ ansible_facts.distribution_version }}"
