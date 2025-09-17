@@ -1,0 +1,7 @@
+---
+- name: Testing idempotency
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Use shell to echo date to a file
+      ansible.builtin.shell: date >> /tmp/datetime.txt
